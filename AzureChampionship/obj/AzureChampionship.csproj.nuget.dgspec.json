@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/garryclawson/Desktop/AzureChampionship/AzureChampionship/AzureChampionship.csproj": {}
+    "/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/AzureChampionship.csproj": {}
   },
   "projects": {
-    "/Users/garryclawson/Desktop/AzureChampionship/AzureChampionship/AzureChampionship.csproj": {
+    "/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/AzureChampionship.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/garryclawson/Desktop/AzureChampionship/AzureChampionship/AzureChampionship.csproj",
+        "projectUniqueName": "/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/AzureChampionship.csproj",
         "projectName": "AzureChampionship",
-        "projectPath": "/Users/garryclawson/Desktop/AzureChampionship/AzureChampionship/AzureChampionship.csproj",
+        "projectPath": "/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/AzureChampionship.csproj",
         "packagesPath": "/Users/garryclawson/.nuget/packages/",
-        "outputPath": "/Users/garryclawson/Desktop/AzureChampionship/AzureChampionship/obj/",
+        "outputPath": "/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
