@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/navbar.css">
+
+</head>
+
+<body>
+
+    <Section class="navBar">
+        <header>
+            <div class="container">
+                <h1 class="logo"></h1>
+
+                <nav>
+                    <ul>
+                        <li><a asp-page="/demo" asp-page-handler="ViewAll">About Us</a></li>
+                        <li><a asp-page="/gettingstarted">Charts</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </Section>
+
+
+    <!-- //Header -->
+    <section class="header">
+
+        <h1>FlowBi</h1>
+        <h2>- Azure Championship 2020 -</h2>
+
+    </section>
+
+
+    <!-- // Description of team -->
+
+    <Section class="description2">
+
+        <h1>Example simulated environment showing real time warning conditions using realtime ingested data from simulated IoT devices.</h1>
+
+    </Section>
+
+    <!-- //  video -->
+
+    <Section class="video">
+
+        <div id="video">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/74YFfEqnM8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+    </Section>
+
+
+</body>
+
+</html>
+
+<script>// Listen to scroll event for window
+
+    console.log("Page Loaded :)");
+
+</script>
