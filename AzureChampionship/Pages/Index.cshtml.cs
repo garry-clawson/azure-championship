@@ -72,6 +72,13 @@ namespace AzureChampionship.Pages
                 double currentRoom3 = minRoom + rand.NextDouble() * 13;
                 double currentRoom4 = minRoom + rand.NextDouble() * 14;
                 double currentRoom5 = minRoom + rand.NextDouble() * 15;
+                double currentRoom6 = minRoom + rand.NextDouble() * 16;
+                double currentRoom7 = minRoom + rand.NextDouble() * 15;
+                double currentRoom8 = minRoom + rand.NextDouble() * 14;
+                double currentRoom9 = minRoom + rand.NextDouble() * 13;
+                double currentRoom10 = minRoom + rand.NextDouble() * 12;
+                double currentRoom11 = minRoom + rand.NextDouble() * 11;
+                double currentRoom12 = minRoom + rand.NextDouble() * 10;
 
                 // Create JSON message
                 var telemetryDataPoint = new
@@ -81,6 +88,14 @@ namespace AzureChampionship.Pages
                     room3 = currentRoom3,
                     room4 = currentRoom4,
                     room5 = currentRoom5,
+                    room6 = currentRoom6,
+                    room7 = currentRoom7,
+                    room8 = currentRoom8,
+                    room9 = currentRoom9,
+                    room10 = currentRoom10,
+                    room11 = currentRoom11,
+                    room12 = currentRoom12,
+
                 };
                 var messageString = JsonConvert.SerializeObject(telemetryDataPoint);
                 var message = new Message(Encoding.ASCII.GetBytes(messageString));
