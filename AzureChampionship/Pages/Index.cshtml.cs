@@ -32,14 +32,13 @@ namespace AzureChampionship.Pages
         {
 
             //simulation connections
-            Console.WriteLine("IoT Hub  - Simulated Sensor Data. Ctrl-C to exit.\n");
+            Console.WriteLine("IoT Hub Simulated Sensor Data Has started:\n");
 
             // Connect to the IoT hub using the MQTT protocol
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
             SendDeviceToCloudMessagesAsync();
-            Console.ReadLine();
 
-            Console.WriteLine("\nSimulation has ended.\n");
+            Console.WriteLine("Send to device has completed. Async readings will now run.\n");
 
             return Page();
         }
@@ -51,7 +50,6 @@ namespace AzureChampionship.Pages
             //// Connect to the IoT hub using the MQTT protocol
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
             SendDeviceToCloudMessagesAsync();
-            Console.ReadLine();
 
             Console.WriteLine("\nSimulation has ended.\n");
 
@@ -77,7 +75,7 @@ namespace AzureChampionship.Pages
 
             int i = 0;
 
-            do
+            while (true)
             {
                 i++;
 
@@ -107,11 +105,15 @@ namespace AzureChampionship.Pages
                 await s_deviceClient.SendEventAsync(message);
                 Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
 
+                if (i > 10)
+                {
+                    Console.WriteLine("\nCompleted 10 messages");
+                    break;
+                }
+
                 await Task.Delay(1000);
 
-            } while (i < 5);
-
-            Console.WriteLine("\nSimulation has ended.\n");
+            }
 
         }
 
