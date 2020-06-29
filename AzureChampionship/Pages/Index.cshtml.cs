@@ -110,7 +110,7 @@ namespace AzureChampionship.Pages
                 await s_deviceClient.SendEventAsync(message);
                 Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
 
-                if (i > 5)
+                if (i > 10)
                 {
                     Console.WriteLine("\nCompleted 10 messages\n");
                     break;
