@@ -27,7 +27,7 @@
 
                 <nav>
                     <ul>
-                        <li><a asp-page="/demo" asp-page-handler="ViewAll">About Us</a></li>
+                        <li><a href="https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf">Azure Championship 2020 Details</a></li>
                     </ul>
                 </nav>
             </div>
@@ -38,7 +38,7 @@
     <!-- //Header -->
     <section class="header">
 
-        <h1>FlowBi</h1>
+        <h1>FlowID</h1>
         <h2>- Azure Championship 2020 -</h2>
         <h2> Callum Thompson & Garry Clawson </h2>
 
@@ -48,37 +48,106 @@
 
     <div class="header">
         <form method="POST">
-            <button type="submit" class="btn btn-danger" asp-page-handler="start">Start Simulation</button>
-
+            <button type="submit" class="btn btn-success" asp-page-handler="start">Start 2 min Simulation</button>
         </form>
 
     </div>
 
     <!-- // Description of team -->
 
-    <Section class="description2">
+    <div class="description">
 
-        <h1>Example simulated environment showing real time warning conditions using realtime ingested data from simulated IoT devices.</h1>
+        <h1>Example simulated environment showing warning conditions using realtime ingested data from simulated IoT devices.</h1>
 
-    </Section>
+    </div>
 
-    <!-- //  video -->
 
-    <Section class="video">
+    <div class="floorPlan">
+        <!--Test IMageMap property -->
+        <img src="assets/floorPlan.png" class="image">
 
-        <div id="video">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+        <div class="circleRoom1" id="Room1"></div>
+        <div class="circleRoom2" id="Room2"></div>
+        <div class="circleRoom3" id="Room3"></div>
+        <div class="circleRoom4" id="Room4"></div>
+        <div class="circleRoom5" id="Room5"></div>
+        <div class="circleRoom6" id="Room6"></div>
+        <div class="circleRoom7" id="Room7"></div>
+        <div class="circleRoom8" id="Room8"></div>
+        <div class="circleRoom9" id="Room9"></div>
+        <div class="circleRoom10" id="Room10"></div>
+        <div class="circleRoom11" id="Room11"></div>
+        <div class="circleRoom12" id="Room12"></div>
 
-    </Section>
+    </div>
 
 
 </body>
 
 </html>
 
-<script>// Listen to scroll event for window
+<script>
+// Listen to scroll event for window
 
     console.log("Page Loaded :)");
+
+    //time interval to change colour every 1 second
+
+    var time = 1;
+
+    var interval = setInterval(function () {
+        if (time <= 60) {
+            time++;
+
+            //change colours
+            document.getElementById("Room1").style.backgroundColor = getRandomColor();
+            document.getElementById("Room2").style.backgroundColor = getRandomColor();
+            document.getElementById("Room3").style.backgroundColor = getRandomColor();
+            document.getElementById("Room4").style.backgroundColor = getRandomColor();
+            document.getElementById("Room5").style.backgroundColor = getRandomColor();
+            document.getElementById("Room6").style.backgroundColor = getRandomColor();
+            document.getElementById("Room7").style.backgroundColor = getRandomColor();
+            document.getElementById("Room8").style.backgroundColor = getRandomColor();
+            document.getElementById("Room9").style.backgroundColor = getRandomColor();
+            document.getElementById("Room10").style.backgroundColor = getRandomColor();
+            document.getElementById("Room11").style.backgroundColor = getRandomColor();
+            document.getElementById("Room12").style.backgroundColor = getRandomColor();
+
+        }
+        else {
+            clearInterval(interval);
+        }
+    }, 1000);
+
+
+    //Get random color to put onto shape
+
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF'.split('');
+
+        var color = '#';
+
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+
+        return color;
+    }
+
+
+
+
+    //var ImageArray = @Html.Raw(Json.Serialize(ViewData["DICOMArrayList"]));
+    //console.log(ImageArray[1]);
+    //console.log(ImageArray.length);
+
+
+    $.getJSON('https://gclawsontempsensor.azurewebsites.net/api/temperature/%7Bdevicename%7D', function (data) {
+        // JSON result in `data` variable
+
+        console.log(data);
+    });
+
+
 
 </script>

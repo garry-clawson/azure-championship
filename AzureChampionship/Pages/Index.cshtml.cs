@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 using System.Text;
-
+using System.Threading;
 
 namespace AzureChampionship.Pages
 {
@@ -32,26 +32,13 @@ namespace AzureChampionship.Pages
         {
 
             //simulation connections
-            Console.WriteLine("IoT Hub Simulated Sensor Data Has started:\n");
+            Console.WriteLine("IoT Hub Simulated Sensor Data Has started:");
 
             // Connect to the IoT hub using the MQTT protocol
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
             SendDeviceToCloudMessagesAsync();
 
             Console.WriteLine("Send to device has completed. Async readings will now run.\n");
-
-            return Page();
-        }
-
-        //Stops the Simulation
-        public IActionResult OnPostStop()
-        {
-
-            //// Connect to the IoT hub using the MQTT protocol
-            s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
-            SendDeviceToCloudMessagesAsync();
-
-            Console.WriteLine("\nSimulation has ended.\n");
 
             return Page();
         }
@@ -68,7 +55,7 @@ namespace AzureChampionship.Pages
         //Async method to send simulated telemetry
         public async void SendDeviceToCloudMessagesAsync()
         {
-
+           
             Random rand = new Random();
             // Initial telemetry values
             double minRoom = 20;
@@ -77,6 +64,7 @@ namespace AzureChampionship.Pages
 
             while (true)
             {
+
                 i++;
 
                 double currentRoom1 = minRoom + rand.NextDouble() * 11;
@@ -102,10 +90,12 @@ namespace AzureChampionship.Pages
                 message.Properties.Add("room1Alert", (currentRoom1 > 30) ? "true" : "false");
 
                 // Send the telemetry message
+
+
                 await s_deviceClient.SendEventAsync(message);
                 Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
 
-                if (i > 10)
+                if (i > 5)
                 {
                     Console.WriteLine("\nCompleted 10 messages\n");
                     break;
@@ -114,6 +104,7 @@ namespace AzureChampionship.Pages
                 await Task.Delay(1000);
 
             }
+
 
         }
 

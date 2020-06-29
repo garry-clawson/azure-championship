@@ -7,8 +7,9 @@ body {
     background-color: white;
 }
 
+
 .header {
-    height: 20vmin;
+    height: 125px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,92 +35,45 @@ body {
     }
 
 
-
-/*** VIDEO SECTION *****************************************************************/
-
-.video {
-    height: 60vmin;
-    padding-bottom: 8vmin;
-}
-
-#video {
-    height: 100%;
-}
-
 /*** DESCRIPTION SECTION *****************************************************************/
 
 .description {
-    height: 300px;
+    height: 175px;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 100%;
     line-height: 1.8;
+    font-size: 12px;
 }
 
-.demo {
-    height: 150px;
-    justify-content: center;
-    align-items: center;
+.floorPlan {
+    position: relative;
+
+}
+
+.image {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: blue;
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0;
+    color: white;
+    font-size: 20px;
+    padding: 20px;
     text-align: center;
-    width: 100%;
-    line-height: 1.8;
 }
-
-.description2 {
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    line-height: 1.8;
-}
-
-.team1 {
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-    .team1 h1 {
-        height: 300px;
-    }
-
-.team2 {
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-    .team2 h1 {
-        height: 300px;
-    }
-
-.team3 {
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-    .team3 h1 {
-        height: 300px;
-    }
-
-.download {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    line-height: 1.8;
-    background-color: orange;
-    border-radius: 15px;
-}
-
-
 
 /*** NAVBAR SECTION *****************************************************************/
 
@@ -137,175 +91,136 @@ body {
     text-align: center;
 }
 
+/*** SHAPES SECTION *****************************************************************/
 
-/*** HEXAGON SECTION *****************************************************************/
-
-.grid {
-    height: 300px;
-    text-align: center;
-}
-
-.headertag {
+.circleRoom1 {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
     overflow: hidden;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 1.5em;
-    text-transform: uppercase;
-}
-
-.headertag {
-    overflow: hidden;
-    text-align: center;
-    padding: 20px 10px;
-    font-size: 1.5em;
-    text-transform: uppercase;
-}
-
-#hexGrid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    margin: 0 auto;
-    overflow: hidden;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
-    list-style-type: none;
-}
-
-.hex {
-    position: relative;
-    visibility: hidden;
-    outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-}
-
-    .hex::after {
-        content: '';
-        display: block;
-        padding-bottom: 86.602%; /* =  100 / tan(60) * 1.5 */
-    }
-
-.hexIn {
     position: absolute;
-    width: 96%;
-    padding-bottom: 110.851%; /* =  width / sin(60) */
-    margin: 0 2%;
+    background-color: red;
+    left: 7%;
+    top: 12%;
+}
+
+.circleRoom2 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
     overflow: hidden;
-    visibility: hidden;
-    outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    -webkit-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-    -ms-transform: rotate3d(0,0,1,-60deg) skewY(30deg);
-    transform: rotate3d(0,0,1,-60deg) skewY(30deg);
+    position: absolute;
+    background-color: red;
+    left: 30%;
+    top: 15%;
 }
 
-    .hexIn * {
-        position: absolute;
-        visibility: visible;
-        outline: 1px solid transparent; /* fix for jagged edges in FF on hover transition */
-    }
-
-.hexLink {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    color: #fff;
+.circleRoom3 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
     overflow: hidden;
-    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-    -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-    transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+    position: absolute;
+    background-color: red;
+    left: 40%;
+    top: 15%;
 }
 
-/*** HEX CONTENT **********************************************************************/
-
-.hex p {
-    width: 50%;
-    padding: 10%;
-    font-family: 'Courier New', sans-serif;
-    color: black;
-    box-sizing: border-box;
-    background-color: rgba(212, 175, 55, 0.8);
-    font-weight: 300;
-    opacity: 0;
-    -webkit-transition: -webkit-transform .2s ease-out, opacity .3s ease-out;
-    transition: transform .2s ease-out, opacity .3s ease-out;
+.circleRoom4 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 50%;
+    top: 15%;
 }
 
-.hex p {
-    top: 60%;
-    padding-bottom: 40%;
-    -webkit-transform: translate3d(0,100%,0);
-    -ms-transform: translate3d(0,100%,0);
-    transform: translate3d(0,100%,0);
+.circleRoom5 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 60%;
+    top: 15%;
 }
 
-
-/*** HOVER EFFECT  **********************************************************************/
-.hexIn:hover p, .hexLink:focus p {
-    opacity: 1;
-    -webkit-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-    -ms-transform: skewY(-30deg) rotate3d(0,0,1,60deg);
-    transform: skewY(-30deg) rotate3d(0,0,1,60deg);
+.circleRoom6 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 69%;
+    top: 15%;
 }
 
-/*** HEXAGON SIZING AND EVEN ROW INDENTATION *****************************************************************/
-@media (min-width:1201px) { /* <- 5-4  hexagons per row */
-    #hexGrid {
-        padding-bottom: 4.4%
-    }
-
-    .hex {
-        width: 20%; /* = 100 / 5 */
-    }
-
-        .hex:nth-child(9n+6) { /* first hexagon of even rows */
-            margin-left: 10%; /* = width of .hex / 2  to indent even rows */
-        }
+.circleRoom7 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 78%;
+    top: 15%;
 }
 
-@media (max-width: 1200px) and (min-width:901px) { /* <- 4-3  hexagons per row */
-    #hexGrid {
-        padding-bottom: 5.5%
-    }
-
-    .hex {
-        width: 25%; /* = 100 / 4 */
-    }
-
-        .hex:nth-child(7n+5) { /* first hexagon of even rows */
-            margin-left: 12.5%; /* = width of .hex / 2  to indent even rows */
-        }
+.circleRoom8 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 8%;
+    top: 45%;
 }
 
-@media (max-width: 900px) and (min-width:601px) { /* <- 3-2  hexagons per row */
-    #hexGrid {
-        padding-bottom: 7.4%
-    }
-
-    .hex {
-        width: 33.333%; /* = 100 / 3 */
-    }
-
-        .hex:nth-child(5n+4) { /* first hexagon of even rows */
-            margin-left: 16.666%; /* = width of .hex / 2  to indent even rows */
-        }
+.circleRoom9 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 8%;
+    top: 62%;
 }
 
-@media (max-width: 600px) { /* <- 2-1  hexagons per row */
-    #hexGrid {
-        padding-bottom: 11.2%
-    }
-
-    .hex {
-        width: 50%; /* = 100 / 3 */
-    }
-
-        .hex:nth-child(3n+3) { /* first hexagon of even rows */
-            margin-left: 25%; /* = width of .hex / 2  to indent even rows */
-        }
+.circleRoom10 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 8%;
+    top: 80%;
 }
 
-@media (max-width: 400px) {
-    #hexGrid {
-        font-size: 13px;
-    }
+.circleRoom11 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 30%;
+    top: 55%;
+}
+
+.circleRoom12 {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    left: 45%;
+    top: 55%;
 }
