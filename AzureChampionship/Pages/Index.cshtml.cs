@@ -107,7 +107,7 @@ namespace AzureChampionship.Pages
 
                 if (i > 10)
                 {
-                    Console.WriteLine("\nCompleted 10 messages");
+                    Console.WriteLine("\nCompleted 10 messages\n");
                     break;
                 }
 
