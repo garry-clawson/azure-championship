@@ -1,5 +1,3 @@
-# AzureChampionship
-
 # Azure Chapmionship 2020 Concept
 CoviFlo is a an example concept create for the Azure Champiionship 2020 competion. Deatsil of which can be found here: https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf 
 
