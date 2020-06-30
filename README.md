@@ -40,5 +40,5 @@ Thats it, you should then be good to go!
 
 * [jimbobbennett](https://github.com/jimbobbennett/MXChip-Workshop) - For the fantastic MxChip workshops and detailed overview of the Azure framework.
 
-* [Clément Mihailescu](https://clementmihailescu.github.io/Pathfinding-Visualizer/) - For creating the really nice Pathfinding Visualizer tool. many really nice examples for all the pathfinding algorithms you can ever think of. 
+* [Clément Mihailescu](https://clementmihailescu.github.io/Pathfinding-Visualizer/) - For creating the really nice Pathfinding Visualizer tool. Many really nice examples for all the pathfinding algorithms you can ever think of. 
 
