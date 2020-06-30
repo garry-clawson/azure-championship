@@ -88,3 +88,4 @@
 /Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/bin/Debug/netcoreapp3.1/runtimes/win7-x64/native/Cosmos.CRTCompat.dll
 /Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/bin/Debug/netcoreapp3.1/runtimes/win7-x64/native/Microsoft.Azure.Documents.ServiceInterop.dll
 /Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/bin/Debug/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/Users/garryclawson/Documents/GitHub/AzureChampionship/AzureChampionship/bin/Debug/netcoreapp3.1/RestSharp.dll

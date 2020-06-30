@@ -9,6 +9,11 @@ using Microsoft.Azure.Devices.Client;
 using Newtonsoft.Json;
 using System.Text;
 using System.Threading;
+using System.IO;
+using System.Data.Odbc;
+using RestSharp;
+using Newtonsoft.Json.Linq;
+
 
 namespace AzureChampionship.Pages
 {
@@ -32,7 +37,7 @@ namespace AzureChampionship.Pages
         {
 
             //simulation connections
-            Console.WriteLine("IoT Hub Simulated Sensor Data Has started:");
+            Console.WriteLine("\nIoT Hub Simulated Sensor Data Has started:");
 
             // Connect to the IoT hub using the MQTT protocol
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
@@ -44,18 +49,16 @@ namespace AzureChampionship.Pages
         }
 
 
-        //Code that sends messages to my Azure hub
-
+        //instantaites devvice client string connection
         private static DeviceClient s_deviceClient;
 
         // The device connection string to authenticate the device with your IoT hub.
-
         private readonly static string s_connectionString = "HostName=gclawsonTempSensorHub.azure-devices.net;DeviceId=gclawson_mxchip;SharedAccessKey=egxteVKHF5+oypQALbXImcKQL1RM0edtnKglT/RBmNM=";
 
-        //Async method to send simulated telemetry
+        //Async method to send simulated telemetry - Async to allow other processes to take place during data send
         public async void SendDeviceToCloudMessagesAsync()
         {
-           
+
             Random rand = new Random();
             // Initial telemetry values
             double minRoom = 20;
@@ -64,6 +67,9 @@ namespace AzureChampionship.Pages
 
             while (true)
             {
+
+                //fetches sensor data from the RESTful API connectde to the CosmosDB
+                FetchData();
 
                 i++;
 
@@ -105,22 +111,90 @@ namespace AzureChampionship.Pages
                 message.Properties.Add("room1Alert", (currentRoom1 > 30) ? "true" : "false");
 
                 // Send the telemetry message
-
-
                 await s_deviceClient.SendEventAsync(message);
-                Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
+                //Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
 
-                if (i > 10)
+ 
+                if (i > 5) // number of iterations of data send
                 {
-                    Console.WriteLine("\nCompleted 10 messages\n");
+                    Console.WriteLine("Completed sending of 10 messages\n");
                     break;
                 }
 
-                await Task.Delay(1000);
+                await Task.Delay(1000); //1000 = 1 second delay
 
             }
 
+        }
 
+
+        //Pareses fetched json and dipslays selected elements
+        public void FetchData()
+        {
+
+            //RESTful API url where our sensor data sits
+            string url = "https://gclawsontempsensor.azurewebsites.net/api/temperature/%7Bdevicename%7D";
+
+            //Use Restsharp to fetch data form url 
+            string data = GetReleases(url);
+            //Console.WriteLine(data);
+
+            var newString = data.Substring(1, data.Length - 2); //removes sqwuare btrackets from front and end of json 
+            //Console.WriteLine("\n\n\n{0}", newString);
+
+            //pares json into c# object so we can pick elements from it to display
+            JObject stuff = JObject.Parse(newString);
+            //Console.WriteLine("\n\n\n{0}", stuff);
+
+
+            //Select element from json object to display
+            string room1 = (string)stuff["Temperature_Data"]["room1"];
+            Console.WriteLine("\nRoom 1: {0}", room1);
+
+            string room2 = (string)stuff["Temperature_Data"]["room2"];
+            Console.WriteLine("Room 2: {0}", room2);
+
+            string room3 = (string)stuff["Temperature_Data"]["room3"];
+            Console.WriteLine("Room 3: {0}", room3);
+
+            string room4 = (string)stuff["Temperature_Data"]["room4"];
+            Console.WriteLine("Room 4: {0}", room4);
+
+            string room5 = (string)stuff["Temperature_Data"]["room5"];
+            Console.WriteLine("Room 5: {0}", room5);
+
+            string room6 = (string)stuff["Temperature_Data"]["room6"];
+            Console.WriteLine("Room 6: {0}", room6);
+
+            string room7 = (string)stuff["Temperature_Data"]["room7"];
+            Console.WriteLine("Room 7: {0}", room7);
+
+            string room8 = (string)stuff["Temperature_Data"]["room8"];
+            Console.WriteLine("Room 8: {0}", room8);
+
+            string room9 = (string)stuff["Temperature_Data"]["room9"];
+            Console.WriteLine("Room 9: {0}", room9);
+
+            string room10 = (string)stuff["Temperature_Data"]["room10"];
+            Console.WriteLine("Room 10: {0}", room10);
+
+            string room11 = (string)stuff["Temperature_Data"]["room11"];
+            Console.WriteLine("Room 11: {0}", room11);
+
+            string room12 = (string)stuff["Temperature_Data"]["room12"];
+            Console.WriteLine("Room 12: {0}", room12);
+
+        }
+
+
+        //Fecthes sensor data from RESTful API and returns reponse
+        public static string GetReleases(string url)
+        {
+            var client = new RestClient(url);
+
+            var response = client.Execute(new RestRequest());
+
+            return response.Content;
         }
 
     }
