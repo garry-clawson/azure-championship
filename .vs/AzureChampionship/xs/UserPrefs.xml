@@ -9,14 +9,14 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AzureChampionship" expanded="True">
-            <Node name="AzureChampionship" expanded="True">
+            <Node name="AzureChampionship" expanded="True" selected="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Pages" expanded="True">
                 <Node name="Shared" expanded="True" />
-                <Node name="Index.cshtml" expanded="True" selected="True" />
+                <Node name="Index.cshtml" expanded="True" />
               </Node>
               <Node name="Properties" expanded="True" />
               <Node name="wwwroot" expanded="True">
