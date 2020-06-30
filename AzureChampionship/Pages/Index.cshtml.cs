@@ -39,11 +39,11 @@ namespace AzureChampionship.Pages
             //simulation connections
             Console.WriteLine("\nIoT Hub Simulated Sensor Data Has started:");
 
+            FetchApiDataAsync();
+
             // Connect to the IoT hub using the MQTT protocol
             s_deviceClient = DeviceClient.CreateFromConnectionString(s_connectionString, TransportType.Mqtt);
             SendDeviceToCloudMessagesAsync();
-
-            Console.WriteLine("Send to device has completed. Async readings will now run.\n");
 
             return Page();
         }
@@ -67,9 +67,6 @@ namespace AzureChampionship.Pages
 
             while (true)
             {
-
-                //fetches sensor data from the RESTful API connectde to the CosmosDB
-                FetchData();
 
                 i++;
 
@@ -103,6 +100,7 @@ namespace AzureChampionship.Pages
                     room12 = currentRoom12,
 
                 };
+
                 var messageString = JsonConvert.SerializeObject(telemetryDataPoint);
                 var message = new Message(Encoding.ASCII.GetBytes(messageString));
 
@@ -115,9 +113,9 @@ namespace AzureChampionship.Pages
                 //Console.WriteLine("\n{0} > Sending Message: {1}", DateTime.Now, messageString);
 
  
-                if (i > 5) // number of iterations of data send
+                if (i >= 1) // number of iterations of data send
                 {
-                    Console.WriteLine("Completed sending of 10 messages\n");
+                    //Console.WriteLine("Completed sending messages\n");
                     break;
                 }
 
@@ -127,8 +125,31 @@ namespace AzureChampionship.Pages
 
         }
 
+        public async void FetchApiDataAsync()
+        {
+            int i = 0;
 
-        //Pareses fetched json and dipslays selected elements
+            while (true)
+            {
+
+                //fetches sensor data from the RESTful API connectde to the CosmosDB
+                FetchData();
+
+                i++;
+
+                if (i >= 1) // number of iterations of data send
+                {
+                    Console.WriteLine("\nIoT Hub Simulated Sensor Data Has stopped.\n");
+                    break;
+                }
+
+                await Task.Delay(1000); //1000 = 1 second delay
+
+            }
+
+        }
+
+        //Parses fetched json and dipslays selected elements
         public void FetchData()
         {
 
@@ -146,43 +167,54 @@ namespace AzureChampionship.Pages
             JObject stuff = JObject.Parse(newString);
             //Console.WriteLine("\n\n\n{0}", stuff);
 
-
             //Select element from json object to display
             string room1 = (string)stuff["Temperature_Data"]["room1"];
             Console.WriteLine("\nRoom 1: {0}", room1);
+            ViewData["room1SensorValue"] = room1;
 
             string room2 = (string)stuff["Temperature_Data"]["room2"];
             Console.WriteLine("Room 2: {0}", room2);
+            ViewData["room2SensorValue"] = room2;
 
             string room3 = (string)stuff["Temperature_Data"]["room3"];
             Console.WriteLine("Room 3: {0}", room3);
+            ViewData["room3SensorValue"] = room3;
 
             string room4 = (string)stuff["Temperature_Data"]["room4"];
             Console.WriteLine("Room 4: {0}", room4);
+            ViewData["room4SensorValue"] = room4;
 
             string room5 = (string)stuff["Temperature_Data"]["room5"];
             Console.WriteLine("Room 5: {0}", room5);
+            ViewData["room5SensorValue"] = room5;
 
             string room6 = (string)stuff["Temperature_Data"]["room6"];
             Console.WriteLine("Room 6: {0}", room6);
+            ViewData["room6SensorValue"] = room6;
 
             string room7 = (string)stuff["Temperature_Data"]["room7"];
             Console.WriteLine("Room 7: {0}", room7);
+            ViewData["room7SensorValue"] = room7;
 
             string room8 = (string)stuff["Temperature_Data"]["room8"];
             Console.WriteLine("Room 8: {0}", room8);
+            ViewData["room8SensorValue"] = room8;
 
             string room9 = (string)stuff["Temperature_Data"]["room9"];
             Console.WriteLine("Room 9: {0}", room9);
+            ViewData["room9SensorValue"] = room9;
 
             string room10 = (string)stuff["Temperature_Data"]["room10"];
             Console.WriteLine("Room 10: {0}", room10);
+            ViewData["room10SensorValue"] = room10;
 
             string room11 = (string)stuff["Temperature_Data"]["room11"];
             Console.WriteLine("Room 11: {0}", room11);
+            ViewData["room11SensorValue"] = room11;
 
             string room12 = (string)stuff["Temperature_Data"]["room12"];
             Console.WriteLine("Room 12: {0}", room12);
+            ViewData["room12SensorValue"] = room12;
 
         }
 

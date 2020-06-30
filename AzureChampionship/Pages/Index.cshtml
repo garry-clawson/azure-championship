@@ -48,7 +48,7 @@
 
     <div class="header">
         <form method="POST">
-            <button type="submit" class="btn btn-success" asp-page-handler="start">Start 2 min Simulation</button>
+            <button type="submit" class="btn btn-success" asp-page-handler="start">Press to Simulate</button>
         </form>
 
     </div>
@@ -91,27 +91,54 @@
 
     console.log("Page Loaded :)");
 
-    //time interval to change colour every 1 second
 
-    var time = 1;
+    //Room sensors values passed from backend c#
+
+    var room1SensorValue = @Html.Raw(Json.Serialize(ViewData["room1SensorValue"]));
+    console.log("Room 1 sensor value", room1SensorValue);
+
+    var room2SensorValue = @Html.Raw(Json.Serialize(ViewData["room2SensorValue"]));
+    console.log("Room 2 sensor value", room2SensorValue);
+
+    var room3SensorValue = @Html.Raw(Json.Serialize(ViewData["room3SensorValue"]));
+    console.log("Room 3 sensor value", room3SensorValue);
+
+    var room4SensorValue = @Html.Raw(Json.Serialize(ViewData["room4SensorValue"]));
+    console.log("Room 4 sensor value", room4SensorValue);
+
+    var room5SensorValue = @Html.Raw(Json.Serialize(ViewData["room5SensorValue"]));
+    console.log("Room 5 sensor value", room5SensorValue);
+
+    var room6SensorValue = @Html.Raw(Json.Serialize(ViewData["room6SensorValue"]));
+    console.log("Room 6 sensor value", room6SensorValue);
+
+    var room7SensorValue = @Html.Raw(Json.Serialize(ViewData["room7SensorValue"]));
+    console.log("Room 7 sensor value", room7SensorValue);
+
+    var room8SensorValue = @Html.Raw(Json.Serialize(ViewData["room8SensorValue"]));
+    console.log("Room 8 sensor value", room8SensorValue);
+
+    var room9SensorValue = @Html.Raw(Json.Serialize(ViewData["room9SensorValue"]));
+    console.log("Room 9 sensor value", room9SensorValue);
+
+    var room10SensorValue = @Html.Raw(Json.Serialize(ViewData["room10SensorValue"]));
+    console.log("Room 10 sensor value", room10SensorValue);
+
+    var room11SensorValue = @Html.Raw(Json.Serialize(ViewData["room11SensorValue"]));
+    console.log("Room 11 sensor value", room11SensorValue);
+
+    var room12SensorValue = @Html.Raw(Json.Serialize(ViewData["room12SensorValue"]));
+    console.log("Room 12 sensor value", room12SensorValue);
+
+
+
+    //Note used - time interval to collect room sensor data from backend
+
+    var sensorTime = 1;
 
     var interval = setInterval(function () {
-        if (time <= 60) {
-            time++;
-
-            //change colours
-            document.getElementById("Room1").style.backgroundColor = getRandomColor();
-            document.getElementById("Room2").style.backgroundColor = getRandomColor();
-            document.getElementById("Room3").style.backgroundColor = getRandomColor();
-            document.getElementById("Room4").style.backgroundColor = getRandomColor();
-            document.getElementById("Room5").style.backgroundColor = getRandomColor();
-            document.getElementById("Room6").style.backgroundColor = getRandomColor();
-            document.getElementById("Room7").style.backgroundColor = getRandomColor();
-            document.getElementById("Room8").style.backgroundColor = getRandomColor();
-            document.getElementById("Room9").style.backgroundColor = getRandomColor();
-            document.getElementById("Room10").style.backgroundColor = getRandomColor();
-            document.getElementById("Room11").style.backgroundColor = getRandomColor();
-            document.getElementById("Room12").style.backgroundColor = getRandomColor();
+        if (sensorTime <= 5) {
+            sensorTime++;
 
         }
         else {
@@ -120,15 +147,94 @@
     }, 1000);
 
 
+
+
+
+
+    //time interval to change colour every 1 second for 60 seconds
+
+    var time = 1;
+
+    var interval = setInterval(function () {
+        if (time <= 60) {
+            time++;
+
+            //change colours
+
+            document.getElementById("Room1").style.backgroundColor = getRoomColor(room1SensorValue);
+            document.getElementById("Room2").style.backgroundColor = getRoomColor(room2SensorValue);
+            document.getElementById("Room3").style.backgroundColor = getRoomColor(room3SensorValue);
+            document.getElementById("Room4").style.backgroundColor = getRoomColor(room4SensorValue);
+            document.getElementById("Room5").style.backgroundColor = getRoomColor(room5SensorValue);
+            document.getElementById("Room6").style.backgroundColor = getRoomColor(room6SensorValue);
+            document.getElementById("Room7").style.backgroundColor = getRoomColor(room7SensorValue);
+            document.getElementById("Room8").style.backgroundColor = getRoomColor(room8SensorValue);
+            document.getElementById("Room9").style.backgroundColor = getRoomColor(room9SensorValue);
+            document.getElementById("Room10").style.backgroundColor = getRoomColor(room10SensorValue);
+            document.getElementById("Room11").style.backgroundColor = getRoomColor(room11SensorValue);
+            document.getElementById("Room12").style.backgroundColor = getRoomColor(room12SensorValue);
+
+        }
+        else {
+            clearInterval(interval);
+        }
+    }, 1000);
+
+
+
+
+
     //Get random color to put onto shape
 
-    function getRandomColor() {
-        var letters = '0123456789ABCDEF'.split('');
+    //function getRandomColor() {
+    //    var letters = '0123456789ABCDEF'.split('');
 
-        var color = '#';
+    //    var color = '#';
 
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
+    //    for (var i = 0; i < 6; i++) {
+    //        color += letters[Math.floor(Math.random() * 16)];
+    //    }
+
+    //    return color;
+    //}
+
+     //Get random color to put onto shape
+
+    //function getRoom1Color() {
+
+    //    if (room1SensorValue < 25)
+    //    {
+
+    //        color = '#7CFC00';
+
+    //    } else if (room1SensorValue > 24 && room1SensorValue < 27)
+    //    {
+
+    //        color = '#FFA500';
+
+    //    } else if (room1SensorValue > 26 && room1SensorValue < 35)
+    //    {
+
+    //        color = '#FF0000';
+    //    }
+
+    //    return color;
+    //}
+
+
+    function getRoomColor(roomColor) {
+
+        if (roomColor < 24) {
+
+            color = '#7CFC00';
+
+        } else if (roomColor > 23 && roomColor < 26) {
+
+            color = '#FFA500';
+
+        } else if (roomColor > 25 && roomColor < 35) {
+
+            color = '#FF0000';
         }
 
         return color;
@@ -137,16 +243,6 @@
 
 
 
-    //var ImageArray = @Html.Raw(Json.Serialize(ViewData["DICOMArrayList"]));
-    //console.log(ImageArray[1]);
-    //console.log(ImageArray.length);
-
-
-    $.getJSON('https://gclawsontempsensor.azurewebsites.net/api/temperature/%7Bdevicename%7D', function (data) {
-        // JSON result in `data` variable
-
-        console.log(data);
-    });
 
 
 
