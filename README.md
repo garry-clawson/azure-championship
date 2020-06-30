@@ -32,3 +32,6 @@ Thats it, you should then be good to go!
 ## Acknowledgements
 * [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) - Microsoft's open source framework for building web apps and services with .NET and C#.
 * [Json.NET](https://www.newtonsoft.com/json) - A high-performance JSON framework for .NET, used for importing and processing user datasets in the full app.
+
+* [jimbobbennett](https://github.com/jimbobbennett/MXChip-Workshop) - For the fantastic MxChip workshops and detailed overview of the Azure framework.
+
