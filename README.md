@@ -31,7 +31,14 @@ Thats it, you should then be good to go!
 
 ## Acknowledgements
 * [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) - Microsoft's open source framework for building web apps and services with .NET and C#.
+
 * [Json.NET](https://www.newtonsoft.com/json) - A high-performance JSON framework for .NET, used for importing and processing user datasets in the full app.
 
+* [RestSharp](https://restsharp.dev) - The most popular REST API client library for .NET
+
+* [Dr Derek Foster](https://staff.lincoln.ac.uk/d49a8e50-b321-48b7-9c33-3ad880bd18d6) - For the really great IoT Module that introduced Azure as well as much more but also provided the code examples and workshops to allow us to create the Triggers and RESTful API's used in this project.
+
 * [jimbobbennett](https://github.com/jimbobbennett/MXChip-Workshop) - For the fantastic MxChip workshops and detailed overview of the Azure framework.
+
+* [Clément Mihailescu](https://clementmihailescu.github.io/Pathfinding-Visualizer/) - For creating the really nice Pathfinding Visualizer tool. many really nice examples for all the pathfinding algorithms you can ever think of. 
 

@@ -2,21 +2,21 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="AzureChampionship/Pages/Index.cshtml">
     <Files>
       <File FileName="AzureChampionship/Pages/Index.cshtml" Line="84" Column="1" />
-      <File FileName="AzureChampionship/wwwroot/css/index.css" Line="21" Column="1" />
+      <File FileName="AzureChampionship/wwwroot/css/index.css" />
       <File FileName="AzureChampionship/Pages/Index.cshtml.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AzureChampionship" expanded="True">
-            <Node name="AzureChampionship" expanded="True" selected="True">
+            <Node name="AzureChampionship" expanded="True">
               <Node name="Dependencies" expanded="True">
                 <Node name="FrameworkReferences" expanded="True" />
                 <Node name="PackageDependencies" expanded="True" />
               </Node>
               <Node name="Pages" expanded="True">
                 <Node name="Shared" expanded="True" />
-                <Node name="Index.cshtml" expanded="True" />
+                <Node name="Index.cshtml" expanded="True" selected="True" />
               </Node>
               <Node name="Properties" expanded="True" />
               <Node name="wwwroot" expanded="True">
