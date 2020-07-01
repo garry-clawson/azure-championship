@@ -185,17 +185,41 @@
             //change colours
 
             document.getElementById("Room1").style.backgroundColor = getRoomColor(room1SensorValue);
+            document.getElementById("Room1").style.transform = getCircleSize(room1SensorValue);
+
             document.getElementById("Room2").style.backgroundColor = getRoomColor(room2SensorValue);
+            document.getElementById("Room2").style.transform = getCircleSize(room2SensorValue);
+
             document.getElementById("Room3").style.backgroundColor = getRoomColor(room3SensorValue);
+            document.getElementById("Room3").style.transform = getCircleSize(room3SensorValue);
+
             document.getElementById("Room4").style.backgroundColor = getRoomColor(room4SensorValue);
+            document.getElementById("Room4").style.transform = getCircleSize(room4SensorValue);
+
             document.getElementById("Room5").style.backgroundColor = getRoomColor(room5SensorValue);
+            document.getElementById("Room5").style.transform = getCircleSize(room5SensorValue);
+
             document.getElementById("Room6").style.backgroundColor = getRoomColor(room6SensorValue);
+            document.getElementById("Room6").style.transform = getCircleSize(room6SensorValue);
+
             document.getElementById("Room7").style.backgroundColor = getRoomColor(room7SensorValue);
+            document.getElementById("Room7").style.transform = getCircleSize(room7SensorValue);
+
             document.getElementById("Room8").style.backgroundColor = getRoomColor(room8SensorValue);
+            document.getElementById("Room8").style.transform = getCircleSize(room8SensorValue);
+
             document.getElementById("Room9").style.backgroundColor = getRoomColor(room9SensorValue);
+            document.getElementById("Room9").style.transform = getCircleSize(room9SensorValue);
+
             document.getElementById("Room10").style.backgroundColor = getRoomColor(room10SensorValue);
+            document.getElementById("Room10").style.transform = getCircleSize(room10SensorValue);
+
             document.getElementById("Room11").style.backgroundColor = getRoomColor(room11SensorValue);
+            document.getElementById("Room11").style.transform = getCircleSize(room11SensorValue);
+
             document.getElementById("Room12").style.backgroundColor = getRoomColor(room12SensorValue);
+            document.getElementById("Room12").style.transform = getCircleSize(room12SensorValue);
+
 
         }
         else {
@@ -203,46 +227,6 @@
         }
     }, 1000);
 
-
-
-
-
-    //Get random color to put onto shape
-
-    //function getRandomColor() {
-    //    var letters = '0123456789ABCDEF'.split('');
-
-    //    var color = '#';
-
-    //    for (var i = 0; i < 6; i++) {
-    //        color += letters[Math.floor(Math.random() * 16)];
-    //    }
-
-    //    return color;
-    //}
-
-     //Get random color to put onto shape
-
-    //function getRoom1Color() {
-
-    //    if (room1SensorValue < 25)
-    //    {
-
-    //        color = '#7CFC00';
-
-    //    } else if (room1SensorValue > 24 && room1SensorValue < 27)
-    //    {
-
-    //        color = '#FFA500';
-
-    //    } else if (room1SensorValue > 26 && room1SensorValue < 35)
-    //    {
-
-    //        color = '#FF0000';
-    //    }
-
-    //    return color;
-    //}
 
 
     function getRoomColor(roomColor) {
@@ -261,6 +245,24 @@
         }
 
         return color;
+    }
+
+    function getCircleSize(circleSize) {
+
+        if (circleSize < 24) {
+
+            size = 'scale(1.0, 1.0)';
+
+        } else if (circleSize > 23 && circleSize < 26) {
+
+            size = 'scale(1.1, 1.1)';
+
+        } else if (circleSize > 25 && circleSize < 35) {
+
+            size = 'scale(1.2, 1.2)';
+        }
+
+        return size;
     }
 
 
