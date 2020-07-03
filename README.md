@@ -1,6 +1,5 @@
 # Azure Championship 2020 Concept
-FlowBio is a an example concept create for the Azure Championship 2020 competition. Details of which can be found here: https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf 
-
+FlowBio is a an example concept created for the Azure Championship 2020 competition. Details of which can be found here: https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf 
 
 
 ## CoviFlo
