@@ -1,10 +1,14 @@
 # Azure Championship 2020 Concept
 FlowBio is a an example concept create for the Azure Championship 2020 competition. Details of which can be found here: https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf 
 
+
+
 ## CoviFlo
 [FlowBio Demo WebApp](https://azurechampionship.azurewebsites.net) is an Azure hosted web app using data ingested from simulated sensors (or this can also be any IoT sensor or MxChip for example).
 
-The FlowBio concept is about brining buildings to live and allowing them to have (through IoT and Cloud) their own experiences that support and compliment the users inside.
+Webapp link: https://azurechampionship.azurewebsites.net/?handler=start
+
+The FlowBio concept is about bringing buildings to life and allowing them to have (through IoT and Cloud) their own experiences that support and compliment the users inside.
 
 This particular concept is based around moving contaminated air out of harms way and out of the building as quickly as possible. The concept achieves this by using IoT devices to monitor and provision extraction, air conditioning units as well as entry and exit points to the building. Effectively trying to mimic an immune system response to dirty air. 
 
