@@ -30,7 +30,7 @@ Azure is used to fully host, manage, connect and monitor all devices and databas
 
 1. Using your browser visit: ```localhost:5001```
     
-Thats it, you should then be good to go!
+That's it, you should then be good to go!
 
 ## Acknowledgements
 * [ASP.NET](https://dotnet.microsoft.com/apps/aspnet) - Microsoft's open source framework for building web apps and services with .NET and C#.
