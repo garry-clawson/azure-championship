@@ -6,7 +6,7 @@ FlowBio is a an example concept create for the Azure Championship 2020 competiti
 ## CoviFlo
 [FlowBio Demo WebApp](https://azurechampionship.azurewebsites.net) is an Azure hosted web app using data ingested from simulated sensors (or this can also be any IoT sensor or MxChip for example).
 
-Webapp link: https://azurechampionship.azurewebsites.net/?handler=start
+Webapp link: https://azurechampionship.azurewebsites.net
 
 The FlowBio concept is about bringing buildings to life and allowing them to have (through IoT and Cloud) their own experiences that support and compliment the users inside.
 
