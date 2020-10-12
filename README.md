@@ -1,13 +1,13 @@
 # Azure Championship 2020 Concept
-CoviFlow is a an example concept created for the Azure Championship 2020 competition. Details of which can be found here: https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf 
+FloBio is a an example concept created for the Azure Championship 2020 competition. Details of which can be found [here](https://certmatters.com/wp-content/uploads/2020/06/Azure-Fundamentals-Championship-Brief-030620.pdf)
 
 
-## CoviFlo
-[CoviFlow Demo WebApp](https://azurechampionship.azurewebsites.net) is an Azure hosted web app using data ingested from simulated sensors (or this can also be any IoT sensor or MxChip for example).
+## FloBio
+[FloBio Demo WebApp](https://azurechampionship.azurewebsites.net) is an Azure hosted web app using data ingested from simulated sensors (or this can also be any IoT sensor or MxChip for example).
 
 Webapp link: https://azurechampionship.azurewebsites.net
 
-The CoviFlow concept is about bringing buildings to life and allowing them to have (through IoT and Cloud) their own experiences that support and compliment the users inside.
+The FloBio concept is about bringing buildings to life and allowing them to have (through IoT and Cloud) their own experiences that support and compliment the users inside.
 
 This particular concept is based around moving contaminated air out of harms way and out of the building as quickly as possible. The concept achieves this by using IoT devices to monitor and provision extraction, air conditioning units as well as entry and exit points to the building. Effectively trying to mimic an immune system response to dirty air. 
 
@@ -46,8 +46,8 @@ That's it, you should then be good to go!
 * [Clément Mihailescu](https://clementmihailescu.github.io/Pathfinding-Visualizer/) - For creating the really nice Pathfinding Visualizer tool. Many really nice examples for all the pathfinding algorithms you can ever think of. 
 
 ## Links to Competition Articles for the Winning Entry
-1. University of Lincoln news: https://www.lincoln.ac.uk/news/2020/10/1640.asp 
-1. School of Computer Science Twitter: https://twitter.com/UoLCompSci/status/1314108594531569665
-1. Prodigy Learn Twitter - https://twitter.com/CertMatters/status/1313498826314047491
-1. Derek Foster Titter: https://twitter.com/DerekFoster/status/1313597827117920257 
+1. [University of Lincoln news article](https://www.lincoln.ac.uk/news/2020/10/1640.asp)
+1. [School of Computer Science Twitter](https://twitter.com/UoLCompSci/status/1314108594531569665)
+1. [Prodigy Learn Twitter](https://twitter.com/CertMatters/status/1313498826314047491)
+1. [Derek Foster Twitter](https://twitter.com/DerekFoster/status/1313597827117920257)
 
