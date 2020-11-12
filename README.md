@@ -50,4 +50,5 @@ That's it, you should then be good to go!
 1. [School of Computer Science Twitter](https://twitter.com/UoLCompSci/status/1314108594531569665)
 1. [Prodigy Learn Twitter](https://twitter.com/CertMatters/status/1313498826314047491)
 1. [Derek Foster Twitter](https://twitter.com/DerekFoster/status/1313597827117920257)
+1. [Prodigy Learning](https://www.prodigylearning.com/cloud-computing-to-solve-global-healthcare-challenges-lincoln-students-scoop-top-prizes-in-microsoft-competition/)
 
